@@ -15,8 +15,9 @@ export const Navbar = (): JSX.Element => {
     const items: NavItem[] = [
         { label: t.nav.home, href: '#' },
         { label: t.nav.about, href: '#about' },
-        { label: t.nav.projects, href: '#projects' },
-        { label: t.nav.contact, href: '#contact' },
+        { label: t.nav.skills, href: '#skills' },
+        // { label: t.nav.projects, href: '#projects' },
+        // { label: t.nav.contact, href: '#contact' },
     ]
 
     const makeHref = (href: string) => `/${locale}${href === '/' ? '' : href}`

@@ -5,7 +5,7 @@ import heroSvg from '../assets/hero.svg'
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 
 export const Hero = () => {
-    const { messages: t } = useLocale()
+    const { messages: t } = useLocale();
 
     return (
         <div className="bg-sky-300 py-24">
@@ -17,7 +17,7 @@ export const Hero = () => {
                     <p className='mt-4 text-3xl text-slate-700 capitalize tracking-wide'>
                         {t.hero.role}
                     </p>
-                    <p className='mt-2 text-lg text-slate-700 capitalize tracking-wide'>
+                    <p className='mt-2 text-lg text-slate-700 tracking-wide'>
                         {t.hero.description}
                     </p>
                     <div className='flex gap-x-4 mt-4'>
