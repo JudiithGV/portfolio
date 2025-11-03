@@ -1,13 +1,13 @@
 "use client"
 
-import React, { JSX } from 'react'
+import { JSX } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale } from '../i18n/LocaleProvider'
 
 type NavItem = { label: string; href: string }
 
-export default function Navbar(): JSX.Element {
+export const Navbar = (): JSX.Element => {
     const pathname = usePathname() ?? '/'
 
     const { locale, messages: t } = useLocale()
@@ -22,9 +22,20 @@ export default function Navbar(): JSX.Element {
     const makeHref = (href: string) => `/${locale}${href === '/' ? '' : href}`
 
     return (
-        <nav className="bg-blue-500">
-            <div className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8'>
-                <h2 className="text-3xl font-bold">{t.title}</h2>
+        <nav className="bg-sky-300">
+            <div className='align-element py-4 flex flex-col sm:flex-row sm:gap-16 sm:items-center sm:py-8'>
+                <>
+                    {(() => {
+                        const parts = t.title.split(' ')
+                        const first = parts.shift()
+                        const rest = parts.join(' ')
+                        return (
+                            <h2 className='text-3xl font-bold'>
+                                {first}{rest && <span className="text-sky-600">{rest}</span>}
+                            </h2>
+                        )
+                    })()}
+                </>
                 <ul className="flex gap-3 list-none m-0 p-0">
                     {items.map((item) => {
                         const linkHref = makeHref(item.href)
@@ -33,7 +44,7 @@ export default function Navbar(): JSX.Element {
                                 ? pathname === linkHref || pathname === `/${locale}` || pathname === '/'
                                 : pathname === linkHref || pathname.startsWith(linkHref)
 
-                        const base = 'text-sm rounded-md px-2 py-1 no-underline'
+                        const base = 'text-lg rounded-lg px-4 py-2 no-underline'
                         const defaultClass = base + ' text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                         const activeClass = base + ' font-semibold bg-gray-100 text-gray-900'
 

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { LocaleProvider } from '../i18n/LocaleProvider'
 import { getMessages } from '../i18n/translations'
-import Navbar from '../components/Navbar'
+import { Navbar } from '../components/Navbar'
 
 type Props = {
   children: ReactNode

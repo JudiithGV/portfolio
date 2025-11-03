@@ -2,22 +2,32 @@ export type Locale = 'en' | 'es'
 
 export const messages = {
   en: {
-    title: 'My Portfolio',
+    title: 'Web Dev',
     nav: {
       home: 'Home',
       about: 'About',
       projects: 'Projects',
       contact: 'Contact',
     },
+    hero: {
+      salute: 'Hello, I am Judith',
+      role: 'Front-end Developer',
+      description: 'focused on React and Next.js',
+    }
   },
   es: {
-    title: 'Mi Portafolio',
+    title: 'Web Dev',
     nav: {
       home: 'Inicio',
-      about: 'Sobre',
+      about: 'Acerca de',
       projects: 'Proyectos',
       contact: 'Contacto',
     },
+    hero: {
+      salute: 'Hola, soy Judith',
+      role: 'Desarrolladora Front-end',
+      description: 'enfocada en React y Next.js',
+    }
   },
 } as const
 
