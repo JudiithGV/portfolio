@@ -9,7 +9,7 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 export const Skills = () => {
 const { messages: t } = useLocale();
 
-const skills: Array<{title: string, icon: JSX.Element}> = 
+const skills: Array<{title: Exclude<keyof typeof t.skills, 'title'>, icon: JSX.Element}> = 
 [
     {title: "html", icon: <FaHtml5 className='h-16 w-16 text-sky-500' />}, 
     {title: "javascript", icon: <FaJs className='h-16 w-16 text-sky-500' />}, 
